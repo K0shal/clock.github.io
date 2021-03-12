@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            background-color: blue;
+        }
+        
+        .outer {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .style {
+            border: 1px solid red;
+            font-weight: bolder;
+            font-family: Arial, Helvetica, sans-serif;
+            color: aliceblue;
+        }
+        
+        .flash {
+            animation-duration: 2s;
+        }
+        
+        p {
+            background-color: red;
+        }
+        
+        h1 {
+            text-transform: uppercase;
+            font-size: 50px;
+            margin-bottom: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        @media(max-width: 570px) {
+            p {
+                font-size: 70px;
+            }
+        }
+        
+        @media(min-width:930px) {
+            p {
+                font-size: 150px
+            }
+        }
+        
+        @media(max-width:390px) {
+            p {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <h1>world clock</h1>
+        <div class="style animated infinite flash">
+            <p id="clock"></p>
+        </div>
+    </div>
+
+    <script>
+        var clock = setInterval(timing, 1000)
+
+        function timing() {
+            var a = new Date();
+            var clo = a.toLocaleTimeString();
+            document.getElementById('clock').innerHTML = clo;
+
+        }
+    </script>
+</body>
+
+</html>
